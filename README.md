@@ -1,2 +1,2 @@
-# Project1
+# E-commerce Watch site 
 Internship project

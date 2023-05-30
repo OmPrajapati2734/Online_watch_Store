@@ -1,0 +1,91 @@
+{% extends "common.html" %}
+             {% load static%}
+             {%block content%}
+             <!DOCTYPE html>
+             <html lang="zxx">
+             
+             <head>
+                 <title> Impact E-Watch | Sign up </title>
+             
+                 <!-- Meta tags -->
+                 <meta charset="UTF-8">
+                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+             
+                 <!-- Google fonts -->
+                 <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+             
+                 <!-- CSS Stylesheet -->
+                 <link rel="Stylesheet" href="{%static 'css/style.css'%}" type="text/css" media="all" />
+             
+             </head>
+             
+             <body>
+                 <div class="w3l-loginblock signinform">
+                     
+                     <!-- main content -->
+                         <div class="row map-content-9">
+                             <br>
+                             <div class="logo">
+                                 <a class="brand-logo" href="index.html">Contact Here</a>
+                             </div>
+                             <div class="info-grids">
+                                 <form  method="post" class="">
+                                     {% csrf_token %}
+                                     {% if a %}
+                                     <div class="form-grid">
+                                         <div class="input-field">
+                                             <label> Name </label>
+                                             <input type="text" name="name" id="uname1" value="{{data.name}}" readonly required="">
+                                         </div>
+                                         <div class="input-field">
+                                             <label> Email </label>
+                                             <input type="email" name="email" id="email" value="{{data.Email}}" readonly required="">
+                                         </div>
+                                         <div class="input-field">
+                                             <label> Phone </label> 
+                                             <input type="number" name="phone" id="phoneno" value="{{data.Phone}}" readonly required="">
+                                         </div>
+                                         <div class="input-field">
+                                             <label> Message </label>
+                                             <input type="address" name="message" id="msg" value="{{data.Message}}" readonly required="">
+                                         </div>
+                                     </div>
+                                     {% else %}
+                                     <div class="form-grid">
+                                      <div class="input-field">
+                                          <label> Name </label>
+                                          <input type="text" name="name" id="uname1" placeholder="Enter Username" required="">
+                                      </div>
+                                      <div class="input-field">
+                                          <label> Email </label>
+                                          <input type="email" name="email" id="email" placeholder="Enter Email" required="">
+                                      </div>
+                                      <div class="input-field">
+                                          <label> Phone </label>
+                                          <input type="number" name="phone" id="phoneno" placeholder="Enter Phone No" required="">
+                                      </div>
+                                      <div class="input-field">
+                                          <label> Message </label>
+                                          <input type="address" name="address" id="address" placeholder="Enter address" required="">
+                                      </div>
+                                  </div>
+                                     {% endif %}
+                                     <br>
+                                     <br>
+                                     <button type="submit" class="btn btn-primary btn-style" style="background-color: rgb(0, 109, 42);">Sign Up</button>
+                                 </form>
+                             </div>
+                             {% if message %} <script>alert("{{message}}")</script> {% endif %}
+                             
+                         </div>
+                     <!-- //main content --> 
+                 </div>
+             
+                 <!-- fontawesome v5-->
+                 <script src="{% static 'css/style.css' %}"></script>
+             
+             </body>
+             
+             </html>
+             {% endblock %}

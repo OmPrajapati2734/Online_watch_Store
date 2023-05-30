@@ -1,0 +1,63 @@
+{% extends "common.html" %}
+{% load static%}
+{%block content%}
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title> login form </title>
+
+    <!-- Meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Google fonts -->
+    <link href="//fonts.googleapis.com/css?family=Nunito:400,700&display=swap" rel="stylesheet">
+
+    <!-- CSS Stylesheet -->
+    <link rel="Stylesheet" href="{%static 'css/style.css'%}" type="text/css" media="all" />
+
+</head>
+
+<body>
+    <div class="w3l-loginblock signinform">
+        <div class="logo">
+            <a class="brand-logo" href="index.html"> login with Phone</a>
+        </div>
+        <!-- main content -->
+            <div class="row map-content-9">
+                <div class="info-grids">
+                    <form  method="post" class="">
+                        {% csrf_token %}
+                        <div class="form-grid">
+                            <div class="input-field">
+                                <label> Phone </label>
+                                <input type="number" name="phone1" id="phone1" placeholder="Enter phone number" required="">
+                            </div>
+                            <div class="input-field">
+                                <label> Password</label>
+                                <input type="password" name="password" id="Password" placeholder="Password" required="">
+                            </div>
+                        </div>
+                    
+                        <br>
+                        <br>
+                       
+                        <button type="submit" style="align-items: center;" class="btn btn-primary btn-style">Get OTP</button>
+                        <br>
+                    </form>
+                </div>
+                
+            </div>
+        <!-- //main content -->
+        {% if message %}<script>alert("{{message}}")</script>{% endif %}
+        
+    </div>
+
+    <!-- fontawesome v5-->
+    <script src="{% static 'css/style.css' %}"></script>
+</body>
+
+</html>
+{% endblock %}

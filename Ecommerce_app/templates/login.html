@@ -1,6 +1,4 @@
-{% extends "common.html" %}
 {% load static%}
-{%block content%}
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -22,12 +20,15 @@
 
 <body>
     <div class="w3l-loginblock signinform">
-        <div class="logo">
-            <a class="brand-logo" href="index.html"> login form</a>
-        </div>
+        
         <!-- main content -->
             <div class="row map-content-9">
+                
                 <div class="info-grids">
+                    <div class="logo">
+                        <a class="brand-logo" href="index.html"> Login form</a>
+                    </div>
+                    <br>
                     <form  method="post" class="">
                         {% csrf_token %}
                         <div class="form-grid">
@@ -43,18 +44,21 @@
                     
                         <br>
                         <br>
-                       
-                        <button type="submit" style="align-items: center;" class="btn btn-primary btn-style">Login now</button>
+                        <button type="submit" class="btn btn-watch-video btn-style" style="background-color: #008374;">Login</button>
+                        <span></span>
+                        <button type="submit" class="btn btn-watch-video btn-style" style="background-color: #008374;">Clear</button>
                         <br>
-                        <p class="text-center mb-4"><a href="{% url 'forgotpassword' %}">Forgot Password</a></p>
+                        <br>
+                        <p class="text-center mb-1"><Span>Click Here </Span><a href="{% url 'forgotpassword' %}"> Forgot Password ?</a></p>
                        <br>
-                       <p class="text-center mb-4">Login with<span><a href="{% url 'phone' %}">Phone Number</a></span></p>
+                       <p class="text-center mb-4">Login with  <span><a href="{% url 'phone' %}">  Phone Number</a></span></p>
                        <br>
-                       <p class="text-center mb-4">Not yot Registered ?<a href="#signup">Sign Up</a></p>
+                       <p class="text-center mb-4">Not yot Registered ?  <a href="#signup"> Sign Up</a></p>
                            <div class="info-grids social-login-details align-self">
                             <p class="text-center mb-3">Or Login with</p>
+                            <br>
                             <div class="social-media">
-                                <a href="#facebook" class="fb"><span class="fa fa-facebook" aria-hidden="true"></span>Login with Facebook</a>
+                                <a href="#facebook" class="fb"><span class="fa-facebook" aria-hidden="true"></span>Login with Facebook</a>
                                 <br>
                                 <a href="#Twitter" class="tw"><span class="fa fa-twitter" aria-hidden="true"></span>Login with Twitter</a>
                             </div>
@@ -74,4 +78,3 @@
 </body>
 
 </html>
-{% endblock %}

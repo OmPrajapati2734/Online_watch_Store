@@ -11,7 +11,6 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
   <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -35,7 +34,7 @@
   <!-- ======= Header ======= -->
   <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
+      <div class="contact-info d-flex align-items-left">
         <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">impactwatch@gmail.com</a></i>
         <i class="bi bi-phone d-flex align-items-center ms-4"><span>+91 1234567890</span></i>
       </div>
@@ -53,21 +52,20 @@
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
       <a href="{% url 'index' %}" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="{% static 'assets/img/logo.png' %}" alt="">
+       
         <h1>Impact<span>E-Watch</span></h1>
       </a>
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="productall">Products</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="{%url 'contact' %}">Contact Now</a></li>
-          <li><a href="blog.html">About Us</a></li>
-         
+          <!-- <li><a href="#services">Services</a></li> -->
+          <li><a href="{%url 'contactus' %}">Contact Now</a></li>
           {% if a %} 
           <li><a href="#">Profile</a></li>
+          <li><a href="{% url 'orderList' %}">My Order</a></li>
           <li><a href="{% url 'logout1' %}">LogOut</a></li>
-          <li><a href="{%url 'changepassword'%}">Change Password</a></li>
+          <li><a href="{%url 'change'%}">Change Password</a></li>
           {% else %}
           <li><a href="{% url 'login' %}">Login</a></li>
           <li><a href="{% url 'register' %}">Sign Up</a></li>

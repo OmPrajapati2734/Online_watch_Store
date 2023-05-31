@@ -22,18 +22,19 @@
 
 <body>
     <div class="w3l-loginblock signinform">
-        <div class="logo">
-            <a class="brand-logo" href="index.html"> Forgot Password </a>
-        </div>
+        
         <!-- main content -->
             <div class="row map-content-9">
                 <div class="info-grids">
+                    <div class="logo">
+                        <a class="brand-logo" href="index.html"> Forgot Password </a>
+                    </div>
                     <form  method="post" class="">
                         {% csrf_token %}
                         <div class="form-grid">
                             <div class="input-field">
-                                <label> Phone</label>
-                                <input type="number" name="phone" id="phone" placeholder="Enter Phone " required="">
+                                <label> Email </label>
+                                <input type="email" name="email" id="email" placeholder="Enter Your Email " required="">
                             </div>
                             
                         </div>
@@ -48,7 +49,9 @@
                 
             </div>
         <!-- //main content -->
-        {% if message %}<script>alert("{{message}}")</script>
+        {% if message %}<script>alert("{{message}}")
+            
+        </script>
         {% endif %}
         
     </div>

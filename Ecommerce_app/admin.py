@@ -22,8 +22,11 @@ admin.site.register(UserReg)
 class UserRegister(admin.ModelAdmin):
     list_display=['name','Email']
 
-admin.site.register(Contact)
 
 class ContactRegister(admin.ModelAdmin):
-    list_display=['name','Email','Phone']
+    contact_display=['name','Email','Phone']
+admin.site.register(contactus)
+
+admin.site.register(ordermodel)
+
 

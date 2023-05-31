@@ -18,9 +18,7 @@
           </div><!-- End Portfolio Item -->
         </div>
       </div>
-    </section>
-
-    <section id="portfolio" class="portfolio sections-bg">
+      <section id="portfolio" class="portfolio sections-bg">
         <div class="container" data-aos="fade-up">
         <div class="portfolio-isotope" data-portfolio-filter="*" data-portfolio-layout="masonry" data-portfolio-sort="original-order" data-aos="fade-up" data-aos-delay="100">
             <div class="col py-3">
@@ -31,18 +29,28 @@
                       <hr>
                       <div class="card-body" style="align-self: center;">
                         <h5 class="mb-0"  style="align-self: center;">{{data.Product_name}}</h5>
-                        <h5 class="mb-0"  style="align-self: center;">{{data.price}}</h5>
+                        <h5 class="mb-0"  style="align-self: center;">MRP ₹ {{data.price}}</h5>
                         <h5 class="mb-0"  style="align-self: center;">{{data.P_description}}</h5>
                       </div>
-                      <button class="btn btn-primary btn-style" type="submit">Buy Now</button>
-                    </div>
-                    
+                      <br>
+                      <!-- <input type=" number"  name="productquantity"> -->
+                      {% if data.Quantity > 0 %} 
+                      <form method='POST' action="{% url 'buy' %}">
+                        {% csrf_token %}
+                        <input type="hidden" value="{{data.id}}" name='id'>
+                        <button class="btn-primary" type="submit">Buy Now</button>
+                      </form>
+                      {% else %}
+                      <h5>Out of Stock</h5>
+                      {% endif %}
+                    </div>   
                   </div>
                 </div>
               </div>
         </div>
         </div>
     </section>
-    <!-- End Portfolio Container -->
+    </section>
+
 </main><!-- End #main -->
 {% endblock %}

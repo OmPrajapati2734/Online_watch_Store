@@ -149,11 +149,6 @@ html {
     letter-spacing: 0;
     text-transform: none;
     }
-    .form-group .form-remember input[type='checkbox'] {
-    display: inline-block;
-    width: auto;
-    margin: 0 10px 0 0;
-    }
     .form-group .form-recovery {
     color: #4285F4;
     font-size: 12px;

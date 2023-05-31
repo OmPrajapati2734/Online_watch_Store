@@ -27,9 +27,24 @@ class UserReg(models.Model):
     Phone=models.IntegerField()
     
 #This table is for contact us 
-class Contact(models.Model):
+class contactus(models.Model):
     name=models.CharField(max_length=200)
     Email=models.EmailField()
-    Subject=models.CharField(max_length=100)
-    Message=models.CharField(max_length=250)
+    Message=models.TextField()
     Phone=models.IntegerField()
+
+class ordermodel(models.Model):
+    productid=models.CharField(max_length=200)
+    productqty=models.CharField(max_length=200)
+    userId=models.CharField(max_length=200)
+    userName=models.CharField(max_length=200)
+    userEmail=models.EmailField()
+    userContact=models.IntegerField()
+    address=models.CharField(max_length=230)
+    orderAmount=models.IntegerField()
+    paymentMethod=models.CharField(max_length=200)
+    transactionId=models.CharField(max_length=200)
+    orderDate=models.DateTimeField(auto_created=True,auto_now=True)
+
+def __str__(self):
+    return self.userName

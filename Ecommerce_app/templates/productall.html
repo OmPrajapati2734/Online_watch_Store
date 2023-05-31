@@ -28,12 +28,12 @@
                   {% for i in data %} 
                   <div class="col-md-4 col-lg-4 mb-4 mb-lg-4">
                     <a href="{% url 'productget' i.id %}">
-                    <div class="card">
-                      <img src="{{i.img.url}}" class="card-img-top" height="200px" width="200px"/>
-                      <hr>
+                    <div class="card" width="200px">
+                      <img src="{{i.img.url}}" class="card-img-top" height="180px" />
+                     
                       <div class="card-body" style="align-self: center;">
                         <h5 class="mb-0"  style="align-self: center;">{{i.Product_name}}</h5>
-                        <h5 class="mb-0"  style="align-self: center;">{{i.price}}</h5>
+                        <h5 class="mb-0"  style="align-self: center;">MRP ₹ {{i.price}}</h5>
                       </div>
                     </div>
                     </a>

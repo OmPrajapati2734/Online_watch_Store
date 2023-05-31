@@ -1,6 +1,5 @@
-{% extends "common.html" %}
+
 {% load static%}
-{%block content%}
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -22,12 +21,14 @@
 
 <body>
     <div class="w3l-loginblock signinform">
-        <div class="logo">
-            <a class="brand-logo" href="index.html"> login with Phone</a>
-        </div>
+        
         <!-- main content -->
             <div class="row map-content-9">
                 <div class="info-grids">
+                    <div class="logo">
+                        <a class="brand-logo" href="index.html"> login with Phone</a>
+                    </div>
+                    <br>
                     <form  method="post" class="">
                         {% csrf_token %}
                         <div class="form-grid">
@@ -35,16 +36,11 @@
                                 <label> Phone </label>
                                 <input type="number" name="phone1" id="phone1" placeholder="Enter phone number" required="">
                             </div>
-                            <div class="input-field">
-                                <label> Password</label>
-                                <input type="password" name="password" id="Password" placeholder="Password" required="">
-                            </div>
                         </div>
-                    
                         <br>
+                        <p class="text-center mb-4">Login with  <span><a href="{% url 'login' %}">  Phone Number</a></span></p>
                         <br>
-                       
-                        <button type="submit" style="align-items: center;" class="btn btn-primary btn-style">Get OTP</button>
+                        <button type="submit" class="btn btn-watch-video btn-style" style="background-color: #008374;">Get OTP</button>
                         <br>
                     </form>
                 </div>
@@ -60,4 +56,3 @@
 </body>
 
 </html>
-{% endblock %}
